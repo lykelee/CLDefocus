@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Realistic Compound-Lens Defocus Blur Synthesis.">
+  <meta name="keywords" content="Defocus Deblurring, Optical Modeling, Dataset Synthesis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Realistic Compound-Lens Defocus Blur Synthesis</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Realistic Compound-Lens Defocus Blur Synthesis</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://lykelee.github.io/">Yunkyu Lee,</a>
+              </span>
+              <span class="author-block">
+                <a href="https://woo525.github.io/">Woohyeok Kim,</a>
+              </span>
+              <span class="author-block">
+                <a href="https://www.scho.pe.kr/">Sunghyun Cho</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">POSTECH</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block has-text-weight-bold">ECCV 2026</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2607.05837" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2607.05837" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/lykelee/CLDefocus"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Defocus blur degrades fine image structures and limits visual perception, which can adversely affect
+              downstream vision tasks.
+              Although recent deep learning deblurring methods have achieved strong performance, their effectiveness
+              depends on training data and often degrades across cameras and lenses due to limited optical diversity and
+              realism in existing datasets.
+              In this paper, we propose a pipeline for synthesizing realistic defocus deblurring datasets for diverse
+              compound lenses.
+              It integrates efficient wave-optics PSF computation via Debye CZT propagation, depth-aware defocus
+              rendering
+              with occlusion handling, and blur synthesis in the radiometrically linear space with camera ISP
+              simulation.
+              This unified pipeline enables the scalable generation of photorealistic defocus datasets with diverse lens
+              characteristics.
+              Using our pipeline, we generate CLDefocus, a large-scale synthetic dataset containing lens-diverse defocus
+              image pairs.
+              We further analyze the limitations of real-captured defocus datasets and show that such imperfections can
+              bias full-reference evaluation.
+              Extensive experiments demonstrate that models trained on CLDefocus achieve improved cross-device
+              generalization compared to models trained on existing real and synthetic datasets.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Pipeline Overview</h2>
+          <div class="content has-text-centered">
+            <img src="./static/images/overview.png" alt="Pipeline overview" class="method-img">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Overall blur synthesis pipeline.
+              We use a simple <strong>image signal processor (ISP)</strong> model to simulate a realistic imaging
+              process.
+              We randomly sample a compound lens design and a focusing distance for each sharp patch.
+              We then compute <strong>point spread functions (PSFs)</strong> to simulate defocus blur.
+              We apply <strong>depth-aware blur</strong> to the sharp patch in the radiometrically linear space.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">PSF Computation</h2>
+          <div class="content has-text-centered">
+            <img src="./static/images/psf-computation.png" alt="PSF computation" class="method-img">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              We develop a practical method for obtaining a large number of defocused PSFs from diverse compound lenses,
+              which is a main technical contribution.
+              We first trace rays through a lens and reconstruct a continuous wavefront function.
+              We then simulate light propagation using the <strong>Debye diffraction formulation</strong>, accelerated
+              with the <strong>chirp Z-transform (CZT)</strong>.
+              We call this method the <strong>Debye CZT</strong>.
+              Thanks to its scalable computational cost and explicit sampling criterion, we can automatically generate a
+              large number of PSFs for arbitrary lens designs.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/psf-examples.png" alt="PSF examples" class="method-img">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Examples of PSFs for diverse lenses computed with the Debye CZT.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Generated Dataset</h2>
+          <div class="content has-text-centered">
+            <img src="./static/images/dataset.png" alt="Generated dataset" class="method-img">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              We generate a large synthetic dataset, dubbed CLDefocus, using our synthesis pipeline.
+              It consists of 40,000/1,000/1,000 pairs for the training/validation/test splits.
+              The sharp source images are taken from the DPDD dataset.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Qualitative Results on Deblurring</h2>
+          <div class="content has-text-centered">
+            <img src="./static/images/qualitative.png" alt="Qualitative results" class="results-img">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Qualitative comparisons of defocus deblurring using the NRKNet deblurring model.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Future Work</h2>
+          <div class="content has-text-justified">
+            <p>
+              We hope that you will further develop our methodology.
+              There are many open questions that we have not addressed, including:
+            </p>
+            <ul>
+              <li>How would the distribution of defocus strength affect deblurring performance?</li>
+              <li>What if we apply it to domain-specific lens collections (e.g., smartphones)?</li>
+              <li>What if we use more advanced ISP and degradation models?</li>
+              <li>What if we use both universal large-scale datasets (just like CLDefocus) and camera-specific
+                fine-tuning
+                datasets?
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{lee2026realisticcompoundlensdefocusblur,
+      title={Realistic Compound-Lens Defocus Blur Synthesis}, 
+      author={Yunkyu Lee and Woohyeok Kim and Sunghyun Cho},
+      year={2026},
+      eprint={2607.05837},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2607.05837}, 
+      }</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+          <p>
+            This page is built from the
+            <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a>
+            project page template.
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
