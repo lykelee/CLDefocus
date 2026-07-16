@@ -1,0 +1,4 @@
+model, weight,    dataset
+nrknet,train_ours,dpdd
+nrknet,train_ours,realdof
+nrknet,train_ours,rtf

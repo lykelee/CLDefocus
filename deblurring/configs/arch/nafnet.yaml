@@ -1,0 +1,8 @@
+# NAFNet arch only (weight/dataset/output supplied by run_tests.py overrides).
+# NAFNetLocal (TLC) — must match the trained checkpoint width/blocks.
+model:
+  img_channel: 3
+  width: 64
+  enc_blk_nums: [1, 1, 1, 28]
+  middle_blk_num: 1
+  dec_blk_nums: [1, 1, 1, 1]

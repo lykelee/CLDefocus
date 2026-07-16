@@ -1,0 +1,57 @@
+{
+    "wvl": 5.875618e-7,
+    "pixsize": 2e-6,
+    "ks": 96,
+    "Nx": 2560,
+    "Ny": 2560,
+    "lenses": [
+        {
+            "name": "prime/EP3029504_Example04P",
+            "fields": {
+                "type": "angle",
+                "values": [
+                    0.0,
+                    16.10717855,
+                    22.41760946
+                ]
+            },
+            "defocus": [
+                0,
+                1e-4,
+                2e-4
+            ]
+        },
+        {
+            "name": "prime/JP2014-026184_Example04P",
+            "fields": {
+                "type": "angle",
+                "values": [
+                    0.0,
+                    10.9571406,
+                    15.46023684
+                ]
+            },
+            "defocus": [
+                0,
+                1e-4,
+                2e-4
+            ]
+        },
+        {
+            "name": "prime/US20150241657_Example01P",
+            "fields": {
+                "type": "angle",
+                "values": [
+                    0.0,
+                    11.98588067,
+                    16.87172702
+                ]
+            },
+            "defocus": [
+                0,
+                1e-4,
+                2e-4
+            ]
+        }
+    ]
+}

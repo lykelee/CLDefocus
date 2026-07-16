@@ -1,0 +1,12 @@
+# Environment variables
+.env
+
+# Python virtual environment
+.venv/
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+
+# Below are for our project
+/temp/

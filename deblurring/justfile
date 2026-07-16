@@ -1,0 +1,21 @@
+set dotenv-load := true
+
+dir := justfile_directory()
+
+@print-dir:
+    echo Justfile directory = {{dir}}
+
+setup-data *args:
+    uv run scripts/setup_data.py {{args}}
+
+eval-once model weight dataset *args:
+    uv run scripts/run_tests.py --row {{model}},{{weight}},{{dataset}} {{args}}
+
+eval-quick *args:
+    uv run scripts/run_tests.py  --list configs/test/quick.csv  --metrics-file configs/metrics/simple.txt {{args}}
+
+eval-full *args:
+    uv run scripts/run_tests.py  --list configs/test/full.csv  --metrics-file configs/metrics/full.txt {{args}}
+
+eval-s24 *args:
+    uv run scripts/run_tests.py  --list configs/test/s24.csv  --metrics-file configs/metrics/nr.txt {{args}}

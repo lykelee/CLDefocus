@@ -1,0 +1,39 @@
+train:
+  batch_size: 4        # train loader
+  test_batch_size: 1   # validation loader (runs during training)
+  num_iters: 350000
+  val_period: 5000    # run validation (+ save if new best) every N iters
+  save_period: 50000  # periodic snapshot every N iters (regardless of best)
+  optimizer: Adam
+  learning_rate: 1.0e-4
+  weight_l2_reg: 0.0   # optimizer weight_decay
+  momentum: 0.9
+  nesterov: true
+  sub_dir: NRKNet_ours
+  resume: null        # path prefix: {resume}/NRKNet_epoch{N}.pth
+  resume_iter: null   # null = last available
+  # LR decay schedule: list of [iter, scale] pairs
+  lr_schedule:
+    - [140000, 0.5]
+    - [210000, 0.25]
+    - [280000, 0.1]
+  # reload best ckpt at these iters
+  reload_iters: [140000, 210000, 280000]
+
+data:
+  train_img_path: data/CLDefocus/train/input
+  train_gt_path:  data/CLDefocus/train/target
+  test_img_path:  data/CLDefocus/val/input
+  test_gt_path:   data/CLDefocus/val/target
+  crop_size: 256
+
+net:
+  num_res: 1
+  num_kernels: 21
+  in_ch: 3
+
+# Loss — defaults reproduce the paper (MSE + β·FFT + α·reblur, always).
+loss:
+  fft_weight: 0.1      # β  (paper)
+  reblur_weight: 0.1   # α  (paper); 0 = original repo behavior (reblur dropped)
+  use_ssim: false      # paper has no SSIM; true = GKMNet-style blinking phase (orig repo)

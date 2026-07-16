@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "deblurring"
+version = "0.1.0"
+description = "Deblurring models for \"Realistic Compound-Lens Defocus Blur Synthesis\""
+requires-python = ">=3.11"
+dependencies = [
+    "einops",
+    "lpips",
+    "natsort",
+    "numpy>=1.21.0,<2",
+    "opencv-python",
+    "Pillow",
+    "pyiqa",
+    "pytorch-msssim",
+    "pyyaml",
+    "setuptools<81.0",
+    "tensorboardX",
+    "termcolor",
+    "thop",
+    "timm",
+    "torch>=2.0,<2.5",
+    "torchvision",
+    "tqdm",
+]
+
+[dependency-groups]
+dev = ["ruff"]
+
+[tool.ruff]
+line-length = 100
+# Vendored / upstream model code — kept verbatim, not formatted.
+# force-exclude so it's skipped even when passed explicitly (editors, pre-commit).
+extend-exclude = ["src/deblurring/models"]
+force-exclude = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/deblurring"]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu118" },
+]
+torchvision = [
+    { index = "pytorch-cu118" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu118"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true

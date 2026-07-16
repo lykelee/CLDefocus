@@ -1,0 +1,13 @@
+model,    weight,      dataset
+restormer,train_ours,  dpdd
+restormer,train_ours,  realdof
+restormer,train_ours,  rtf
+restormer,train_ours,  ours
+restormer,train_syndof,dpdd
+restormer,train_syndof,realdof
+restormer,train_syndof,rtf
+restormer,train_syndof,ours
+restormer,train_dpdd,  dpdd
+restormer,train_dpdd,  realdof
+restormer,train_dpdd,  rtf
+restormer,train_dpdd,  ours

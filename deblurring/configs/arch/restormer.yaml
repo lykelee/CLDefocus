@@ -1,0 +1,13 @@
+# Restormer arch only — must match the checkpoint.
+# weight/dataset/output supplied by run_tests.py overrides.
+model:
+  inp_channels: 3
+  out_channels: 3
+  dim: 48
+  num_blocks: [4, 6, 6, 8]
+  num_refinement_blocks: 4
+  heads: [1, 2, 4, 8]
+  ffn_expansion_factor: 2.66
+  bias: false
+  LayerNorm_type: WithBias
+  dual_pixel_task: false

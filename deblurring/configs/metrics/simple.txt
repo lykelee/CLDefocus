@@ -1,0 +1,3 @@
+psnr
+ssim
+lpips

@@ -1,0 +1,26 @@
+# Weight registry: model -> weight-name -> checkpoint path.
+#
+# The `weight` column in a test CSV (configs/test/*.csv) references a name here.
+# Values are plain paths (relative resolves against the repo root). Download the
+# checkpoints manually and place them under weights/ (or edit the paths below to
+# wherever you keep them). A raw checkpoint path in the CSV also works.
+
+nrknet:
+  train_ours:   weights/nrknet-train-ours.pth
+  train_dpdd:   weights/nrknet-train-dpdd.pth
+  train_syndof: weights/nrknet-train-syndof.pth
+
+restormer:
+  train_ours:   weights/restormer-train-ours.pth
+  train_dpdd:   weights/restormer-train-dpdd.pth
+  train_syndof: weights/restormer-train-syndof.pth
+
+iniknet:
+  train_ours:   weights/iniknet-train-ours.pth
+  train_dpdd:   weights/iniknet-train-dpdd.pth
+  train_syndof: weights/iniknet-train-syndof.pth
+
+nafnet:
+  train_ours:   weights/nafnet-train-ours.pth
+  train_dpdd:   weights/nafnet-train-dpdd.pth
+  train_syndof: weights/nafnet-train-syndof.pth

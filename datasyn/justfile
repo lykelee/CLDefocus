@@ -1,0 +1,32 @@
+set dotenv-load := true
+
+just_root := justfile_directory()
+cur_dir  := invocation_directory()
+
+@print:
+    echo Justfile is at {{just_root}} and you are at {{cur_dir}}
+
+sync:
+    uv sync
+
+run *args:
+    uv run {{args}}
+
+analyze-lenses:
+    uv run scripts/synthesis/analyze_lenses.py \
+        "${LENS_TABLE_ROOT}" \
+        "${LENS_ANSYS_ROOT}"
+
+syn config:
+    uv run scripts/synthesis/synthesize_dataset.py \
+        --config {{config}}
+
+syn-quick-test *args:
+    uv run scripts/synthesis/synthesize_dataset.py \
+        --config configs/quick-test.yaml \
+        {{args}}
+
+syn-cldefocus *args:
+    uv run scripts/synthesis/synthesize_dataset.py \
+        --config configs/cldefocus.yaml \
+        {{args}}

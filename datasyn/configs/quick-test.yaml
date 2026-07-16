@@ -1,0 +1,76 @@
+data:
+  kind: train
+  dataset_name: dpdd
+  root: ${DATASYN_QUICK_TEST}
+
+run:
+  seed: 0
+  stages: [s1, s2, s3, s4, s5, s6]
+  workers: 1
+  fail_fast: true
+  show_progress: true
+
+lens:
+  name: lens-designs
+  root: ${LENS_TABLE_ROOT}
+  classify_db: ${LENS_ANSYS_ROOT}/classify/data.db
+  stats_db: ${LENS_ANSYS_ROOT}/stats/data.db
+  category_filters: [System Camera, Mobile]
+
+provider:
+  kind: normal
+  train:
+    dir_raw: ${DPDD_CR2_ROOT}/train_c_target
+    dir_dpt: ${DPDD_DEPTH_ROOT}/train_c_target
+  val:
+    dir_raw: ${DPDD_CR2_ROOT}/val_c_target
+    dir_dpt: ${DPDD_DEPTH_ROOT}/val_c_target
+  test:
+    dir_raw: ${DPDD_CR2_ROOT}/test_c_target
+    dir_dpt: ${DPDD_DEPTH_ROOT}/test_c_target
+
+splits:
+  train:
+    n_patches_total: 600
+    n_candidates: 171
+    n_keep: 400
+    lens_choose_start: 0
+    lens_choose_end: 420
+  val:
+    n_patches_total: 60
+    n_candidates: 20
+    n_keep: 40
+    lens_choose_start: 420
+    lens_choose_end: 560
+  test:
+    n_patches_total: 60
+    n_candidates: 19
+    n_keep: 40
+    lens_choose_start: 560
+    lens_choose_end: 700
+
+s1:
+  patch_hw: [384, 384]
+  aug_mode: full
+  save_viz_image: false
+  save_viz_depth: false
+
+s2: {}
+
+s3:
+  ks: 128
+  imgsize_wh: [1680, 1120]
+  gpu_task_chunk_size: 32
+
+s4:
+  save_viz: true
+  save_coc: false
+  ablate_vardpt: false
+
+s5:
+  ks: 128
+  save_viz: true
+  ablate_psf: false
+
+s6:
+  ablate_isp: false

@@ -1,0 +1,13 @@
+model,  weight,      dataset
+iniknet,train_ours,  dpdd
+iniknet,train_ours,  realdof
+iniknet,train_ours,  rtf
+iniknet,train_ours,  ours
+iniknet,train_syndof,dpdd
+iniknet,train_syndof,realdof
+iniknet,train_syndof,rtf
+iniknet,train_syndof,ours
+iniknet,train_dpdd,  dpdd
+iniknet,train_dpdd,  realdof
+iniknet,train_dpdd,  rtf
+iniknet,train_dpdd,  ours

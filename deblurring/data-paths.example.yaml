@@ -1,0 +1,24 @@
+# Copy to data-paths.yaml (gitignored) and set paths to YOUR raw datasets.
+# Then: uv run scripts/setup_data.py   (or: just setup-data)
+# Only list the datasets you have — missing ones are skipped.
+
+# DPDD: the extracted dd_dp_dataset_png folder (has test_c/train_c/val_c inside).
+DPDD:      path/to/DPDD/dd_dp_dataset_png
+
+# RealDOF: folder containing source/ and target/.
+RealDOF:   path/to/RealDOF
+
+# RTF: folder containing Ground_Truth_Data/ (image_NN.png + sharp_NN.png).
+RTF:       path/to/RTF
+
+# CLDefocus: folder with train/ val/ test/, each having input/ and target/.
+CLDefocus: path/to/CLDefocus
+
+# S24: flat folder of input images (no ground truth).
+S24:       path/to/galaxy-s24-captures
+
+# SYNDOF: generated from raw GT + synthesized blurry inputs.
+SYNDOF:
+  gt_root:    path/to/syndof/source/synthetic_datasets/image
+  input_root: path/to/syndof/generated/train/SYNDOF/image
+  train_size: 8000

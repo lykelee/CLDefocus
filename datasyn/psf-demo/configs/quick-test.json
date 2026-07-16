@@ -1,0 +1,28 @@
+{
+    "wvl": 5.875618e-7,
+    "pixsize": 1e-5,
+    "ks": 96,
+    "Nx": 2560,
+    "Ny": 2560,
+    "lenses": [
+        {
+            "name": "prime/JP2018-205527_Example01P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        }
+    ]
+}

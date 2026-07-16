@@ -1,0 +1,13 @@
+# Local environment (keep .env.example tracked)
+.env
+
+# IDE
+.vscode/
+
+# Dummy files
+@eaDir
+.DS_Store
+Thumbs.db
+
+# Temporary files
+/temp/

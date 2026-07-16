@@ -1,0 +1,49 @@
+model,    weight,      dataset
+nrknet,   train_ours,  dpdd
+nrknet,   train_ours,  realdof
+nrknet,   train_ours,  rtf
+nrknet,   train_ours,  ours
+nrknet,   train_syndof,dpdd
+nrknet,   train_syndof,realdof
+nrknet,   train_syndof,rtf
+nrknet,   train_syndof,ours
+nrknet,   train_dpdd,  dpdd
+nrknet,   train_dpdd,  realdof
+nrknet,   train_dpdd,  rtf
+nrknet,   train_dpdd,  ours
+restormer,train_ours,  dpdd
+restormer,train_ours,  realdof
+restormer,train_ours,  rtf
+restormer,train_ours,  ours
+restormer,train_syndof,dpdd
+restormer,train_syndof,realdof
+restormer,train_syndof,rtf
+restormer,train_syndof,ours
+restormer,train_dpdd,  dpdd
+restormer,train_dpdd,  realdof
+restormer,train_dpdd,  rtf
+restormer,train_dpdd,  ours
+iniknet,  train_ours,  dpdd
+iniknet,  train_ours,  realdof
+iniknet,  train_ours,  rtf
+iniknet,  train_ours,  ours
+iniknet,  train_syndof,dpdd
+iniknet,  train_syndof,realdof
+iniknet,  train_syndof,rtf
+iniknet,  train_syndof,ours
+iniknet,  train_dpdd,  dpdd
+iniknet,  train_dpdd,  realdof
+iniknet,  train_dpdd,  rtf
+iniknet,  train_dpdd,  ours
+nafnet,   train_dpdd,  dpdd
+nafnet,   train_dpdd,  realdof
+nafnet,   train_dpdd,  rtf
+nafnet,   train_dpdd,  ours
+nafnet,   train_ours,  dpdd
+nafnet,   train_ours,  realdof
+nafnet,   train_ours,  rtf
+nafnet,   train_ours,  ours
+nafnet,   train_syndof,dpdd
+nafnet,   train_syndof,realdof
+nafnet,   train_syndof,rtf
+nafnet,   train_syndof,ours

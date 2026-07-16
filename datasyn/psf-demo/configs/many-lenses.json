@@ -1,0 +1,465 @@
+{
+    "wvl": 5.875618e-7,
+    "pixsize": 1e-5,
+    "ks": 96,
+    "Nx": 2560,
+    "Ny": 2560,
+    "lenses": [
+        {
+            "name": "prime/CN107255857_Example01P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "zoom/EP2664955_Example01BP",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "zoom/JP1989-193709_Example01P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/JP2003-005030_Example06_Tale78",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/JP2013-161076_Example01P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/JP2018-205527_Example01P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/JP2019-144441_Example01P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/JP2020-190696_Example03MLP",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "zoom/US004699475_Example07_Tale71",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/US02250337-1",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/US02466424-2",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/US02777363-1",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "zoom/US06195210-1",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "zoom/US06597514-1",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/US07583441-1",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/US07974016-1",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "zoom/US08014079-1",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/US08422143-1",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/US09389399-1",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/US20040223070_Example04P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "zoom/US20080198475_Example03P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "prime/US20160313535_Example01P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "zoom/US20170090163_Example01MLP",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        },
+        {
+            "name": "zoom/WO2020-136749_Example01P",
+            "fields": {
+                "type": "height",
+                "values": [
+                    0.0,
+                    0.35,
+                    0.7
+                ]
+            },
+            "defocus": [
+                0,
+                2e-4,
+                4e-4,
+                6e-4,
+                8e-4,
+                1e-3
+            ]
+        }
+    ]
+}

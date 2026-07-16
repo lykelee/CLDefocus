@@ -1,0 +1,13 @@
+model,    weight,      dataset
+nrknet,   train_dpdd,  s24
+nrknet,   train_syndof,s24
+nrknet,   train_ours,  s24
+restormer,train_dpdd,  s24
+restormer,train_syndof,s24
+restormer,train_ours,  s24
+iniknet,  train_dpdd,  s24
+iniknet,  train_syndof,s24
+iniknet,  train_ours,  s24
+nafnet,   train_dpdd,  s24
+nafnet,   train_syndof,s24
+nafnet,   train_ours,  s24

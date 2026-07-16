@@ -1,0 +1,13 @@
+model, weight,      dataset
+nafnet,train_ours,  dpdd
+nafnet,train_ours,  realdof
+nafnet,train_ours,  rtf
+nafnet,train_ours,  ours
+nafnet,train_syndof,dpdd
+nafnet,train_syndof,realdof
+nafnet,train_syndof,rtf
+nafnet,train_syndof,ours
+nafnet,train_dpdd,  dpdd
+nafnet,train_dpdd,  realdof
+nafnet,train_dpdd,  rtf
+nafnet,train_dpdd,  ours

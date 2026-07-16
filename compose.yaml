@@ -1,0 +1,55 @@
+name: cldefocus
+
+# Two isolated GPU environments in one file.
+# datasyn = JAX (CUDA 12) synthesis, deblurring = PyTorch (CUDA 11.8) models.
+# Their CUDA stacks conflict, so each is a separate image/service.
+#
+# Setup:  cp .env.example .env   then edit DATA_DIR
+# Usage:  docker compose up -d datasyn        # or: deblurring
+#         docker compose exec datasyn bash
+#         just sync                           # inside the container
+
+x-common: &common
+  env_file: [ .env ]
+  working_dir: /workspace
+  shm_size: "8g"
+  deploy:
+    resources:
+      reservations:
+        devices:
+          - driver: nvidia
+            count: all
+            capabilities: [ gpu ]
+  stdin_open: true
+  tty: true
+
+services:
+  datasyn:
+    <<: *common
+    build:
+      context: ./datasyn
+      dockerfile: Dockerfile
+    image: cldefocus_datasyn
+    container_name: cldefocus_datasyn
+    volumes:
+      - ./datasyn:/workspace:rw
+      # venv on a named volume, off the bind mount: host-agnostic, no host contamination.
+      - datasyn_venv:/workspace/.venv
+      # Host dataset root, mounted at /data. Set DATA_DIR in .env.
+      - ${DATA_DIR:-./data}:/data:rw
+
+  deblurring:
+    <<: *common
+    build:
+      context: ./deblurring
+      dockerfile: Dockerfile
+    image: cldefocus_deblurring
+    container_name: cldefocus_deblurring
+    volumes:
+      - ./deblurring:/workspace:rw
+      - deblurring_venv:/workspace/.venv
+      - ${DATA_DIR:-./data}:/data:rw
+
+volumes:
+  datasyn_venv:
+  deblurring_venv:

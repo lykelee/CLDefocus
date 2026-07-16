@@ -1,0 +1,5 @@
+# NRKNet arch only (weight/dataset/output supplied by run_tests.py overrides).
+net:
+  num_res: 1
+  num_kernels: 21
+  in_ch: 3

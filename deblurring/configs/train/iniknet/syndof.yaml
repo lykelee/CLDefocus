@@ -1,0 +1,39 @@
+train:
+  img_path:    data/SYNDOF/train/input
+  gt_path:     data/SYNDOF/train/target
+  dataset:     syndof
+  crop_size:   256
+  batch_size:  4
+  acc_step:    1                # gradient accumulation steps
+  num_workers: 8
+  lr:          2.0e-4
+  total_iters: 400000           # paper: 4e5 iterations
+  mile_stone:  [100000, 200000, 300000]   # iters; halve every 1e5 (paper)
+  rate:        0.5
+  save_period: 50000            # named ckpt + resume state every N iters
+  log_period:  1000             # averaged train log every N iters
+  checkpoint_dir: experiments/train/iniknet/syndof
+
+  # resume from trained weights (iter restored from scheduler state)
+  start_from_trained: false
+  weight_path:    null
+  optimizer_path: null
+  scheduler_path: null
+
+model:
+  model_name:     INIKNet
+  in_ch:          3
+  base_ch:        32
+  num_res_unet:   2
+  num_res_lstm:   2
+  basis_num:      10
+  max_kernel_size: 15
+  w_max:          12
+  w_min:          2
+  learnable_freq: true
+
+# Loss — defaults reproduce the paper (eq.10): MSE + 0.1*freq + 0.1*LPIPS, no VGG.
+loss:
+  freq_weight:  0.1
+  lpips_weight: 0.1
+  vgg_weight:   0.0   # >0 = original repo behavior (adds VGG perceptual loss)

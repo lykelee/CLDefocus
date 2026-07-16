@@ -1,0 +1,11 @@
+# Full-reference:
+psnr
+ssim
+lpips
+dists
+# No-reference:
+niqe
+musiq
+maniqa
+topiq_nr
+clipiqa

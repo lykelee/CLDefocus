@@ -1,0 +1,27 @@
+set dotenv-load := true
+
+dir := justfile_directory()
+
+@print-dir:
+    echo Justfile directory = {{dir}}
+
+quick-test:
+    uv run compute_psfs.py \
+        --lens-root ${LENS_TABLE_ROOT} \
+        --config configs/quick-test.json \
+        --out out/quick-test
+
+many-lenses:
+    uv run compute_psfs.py \
+        --lens-root ${LENS_TABLE_ROOT} \
+        --config configs/many-lenses.json \
+        --out out/many-lenses
+
+compare-with-zemax:
+    uv run compute_psfs.py \
+        --lens-root ${LENS_TABLE_ROOT} \
+        --config configs/compare-with-zemax.json \
+        --out out/compare-with-zemax 
+    uv run compare_with_zemax.py \
+        --psf-npz-root out/compare-with-zemax/npz \
+        --out out/compare-with-zemax.png
